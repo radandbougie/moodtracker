@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14460.31" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch42" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14460.16"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="WatchMoodTracker" customModuleProvider="target">
+                    <items>
+                        <table alignment="left" id="39c-ik-OX6"/>
+                        <button width="1" height="1" heightAdjustment="-16" alignment="left" title="How are you feeling?" id="Div-kL-Bpg">
+                            <connections>
+                                <segue destination="so1-8e-pvp" kind="push" id="T7a-8a-D1B"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-981" y="-1"/>
+        </scene>
+        <!--Mood Controller-->
+        <scene sceneID="FHM-P0-jpZ">
+            <objects>
+                <controller id="so1-8e-pvp" customClass="MoodController" customModule="WatchMoodTracker_Extension">
+                    <items>
+                        <table alignment="left" id="mAb-nE-ygd">
+                            <items>
+                                <tableRow identifier="moodCell" id="5nc-sW-YZJ" customClass="MoodCell" customModule="WatchMoodTracker_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="1DP-eW-B9F">
+                                        <items>
+                                            <imageView width="0.29999999999999999" widthAdjustment="-7" height="0.84999999999999998" alignment="left" verticalAlignment="center" id="YkA-bA-eKE"/>
+                                            <label width="0.69999999999999996" height="1" alignment="left" verticalAlignment="center" text="Label" textAlignment="left" id="dLb-eL-UF2"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="moodImage" destination="YkA-bA-eKE" id="2uV-OD-ABQ"/>
+                                        <outlet property="moodLabel" destination="dLb-eL-UF2" id="xfi-P6-lbc"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="mAb-nE-ygd" id="E8H-89-Ncr"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-738" y="-1"/>
+        </scene>
+    </scenes>
+</document>
